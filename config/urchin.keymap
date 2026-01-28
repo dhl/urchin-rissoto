@@ -160,10 +160,10 @@
 		ext_layer {
 			label = "Mod";
 			bindings = <
-			&kp ESC   &trans    &trans     &trans     &trans             &kp PG_UP     &kp HOME  &kp UP    &kp END    &kp PG_DN
-			&sk LALT  &sk LGUI  &sk LCTRL  &sk LSHFT  &kp RALT           &kp BSPC      &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL
-			&kp LC(Z) &kp LC(X) &kp LC(C)  &kp TAB    &kp LC(V)          &kp LC(BSPC)  &trans    &trans    &trans     &kp CAPS
-                                              &trans  &kp LCTRL          &kp ENTER  &mo FNC
+			&kp ESC   &trans    &trans     &trans     &trans             &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
+			&sk LALT  &sk LGUI  &sk LCTRL  &sk LSHFT  &kp RALT           &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp LC(BSPC)
+			&none     &none     &none      &kp TAB    &none              &kp CAPS   &trans    &trans    &trans     &kp DEL
+                                                 &trans  &trans          &kp ENTER  &mo FNC
 			>;
 		};
 
@@ -182,10 +182,10 @@
 		num_layer {
 			label = "Num";
 			bindings = <
-			&kp SLASH   &kp N7  &kp N8  &kp N9  &kp STAR          &none  &none  &none  &none  &none 
-			&kp MINUS   &kp N4  &kp N5  &kp N6  &kp PLUS          &none  &none  &none  &none  &none
-			&kp PERIOD  &kp N1  &kp N2  &kp N3  &kp N0            &none  &none  &none  &none  &none
-							         &kp BSPC  &kp ENTER          &none  &none
+			&kp SLASH  &kp N7  &kp N8  &kp N9    &kp STAR          &none  &none  &none  &none  &none 
+			&kp MINUS  &kp N4  &kp N5  &kp N6    &kp PLUS          &none  &none  &none  &none  &none
+			&none      &kp N1  &kp N2  &kp N3    &none             &none  &none  &none  &none  &none
+                                       &kp PERIOD  &kp N0          &none  &none
 			>;
 		};
 
