@@ -1,26 +1,26 @@
-Firmware for: [Urchin Keyboard](https://github.com/duckyb/urchin)
+# Rissoto
+
+An experimental 34-key keymap focused on Rust programming ergonomics, designed for the [Urchin Keyboard](https://github.com/duckyb/urchin).
+
+## RSI relief for Rust and TypeScript programmers
+
+This keymap is designed to reduce strains for Rust and TypeScript programmers suffering from Repetitive Strain Injury (RSI).
+
+In a conventional keyboard layout, the keys for the symbols usedd in programming are hard to reach. Reaching those keys often involve moving the entire hand, bending the wrist in an uncomforable way, or repeatedly straining weaker fingers.
+
+This keymap places those programming symbols only 1 unit away from the home row, with placement arranged around fingers by the frequency of use of the symbols in the Rust and the relative strength of the fingers. Although the keymap is primarily focused on increasing Rust programming comfort, it is also great for coding in TypeScript.
 
 ## Getting started
 
 **Are you trying to make your own ZMK firmware?**  
 [Here are the steps you need to take.](./GETTING_STARTED.md)
 
-**Do you want to download my keymap?**  
-
-> [!IMPORTANT]
-> My firmware only matches the following diagram if the operating system is set to "Italian" keyboard input.
-
-[Download the firmware zip from the latest action run.](https://github.com/duckyb/zmk-urchin/actions/workflows/build.yml?query=is%3Asuccess+branch%3Amaster) Check [the ZMK docs](https://zmk.dev/docs/user-setup#installing-the-firmware) for instructions on how to flash it.
-
 ## Keymap Cheat Sheet
 
-This layout is inspired by [Seniply by Stevep99](https://stevep99.github.io/seniply/)
+This layout is inspired by [Urchin by duckyb](https://github.com/duckyb/zmk-urchin)
 
-[See it in action on YouTube!](https://youtu.be/IZ83uU0ltaE)
 <div align="center">
-  
-  ![sweep-layout](https://user-images.githubusercontent.com/27895007/185715593-69f9f981-ae17-4788-b2a8-d1360c65622a.svg)
-
+  ![sweep-layout](https://github.com/user-attachments/assets/0e1fe2b4-5522-4554-8e1e-d71a155895bf)
 </div>
 
 *This diagram was created using draw.io*  
