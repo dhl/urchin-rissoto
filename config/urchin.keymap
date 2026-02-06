@@ -22,7 +22,7 @@
 
 /* Global defaults */
 
-#define QUICK_TAP_MS 175
+#define QUICK_TAP_MS 200
 
 /* Homerow mods */
 
@@ -59,17 +59,17 @@
 // Helper macro to define home-row modifier behaviors
 #define DEFINE_HRM(_label, _name, _hold, _tap, _triggers, ...)  \
     _label: _name {                                             \
-      compatible = "zmk,behavior-hold-tap";                     \
-      label = #_name;                                           \
-      #binding-cells = <2>;                                     \
-      flavor = "balanced";                                      \
-      tapping-term-ms = <200>;                                  \
-      quick-tap-ms = <QUICK_TAP_MS>;                            \
-      require-prior-idle-ms = <125>;                            \
-      hold-trigger-key-positions = <_triggers>;                 \
-      hold-trigger-on-release;                                  \
-      bindings = <_hold>, <_tap>;                               \
-      __VA_ARGS__                                               \
+        compatible = "zmk,behavior-hold-tap";                   \
+        label = #_name;                                         \
+        #binding-cells = <2>;                                   \
+        flavor = "balanced";                                    \
+	    tapping-term-ms = <230>;                                \
+        quick-tap-ms = <QUICK_TAP_MS>;                          \
+	    require-prior-idle-ms = <160>;                          \
+        hold-trigger-key-positions = <_triggers>;               \
+        hold-trigger-on-release;                                \
+        bindings = <_hold>, <_tap>;                             \
+        __VA_ARGS__                                             \
     }
 
 // Layer definitions
@@ -92,35 +92,35 @@
 		// Enables holding the first mod-tap key
 		// by performing a tap-release-hold sequence.
 		// To use it: "&qt KEYCODE1 KEYCODE2"
-		qt: quick_tap {
-			compatible = "zmk,behavior-hold-tap";
-			label = "QUICK_TAP";
-			#binding-cells = <2>;
-			flavor = "hold-preferred";
-			tapping-term-ms = <200>;
-			quick-tap-ms = <200>;
-			bindings = <&kp>, <&kp>;
-		};
+		// qt: quick_tap {
+		// 	compatible = "zmk,behavior-hold-tap";
+		// 	label = "QUICK_TAP";
+		// 	#binding-cells = <2>;
+		// 	flavor = "hold-preferred";
+		// 	tapping-term-ms = <200>;
+		// 	quick-tap-ms = <200>;
+		// 	bindings = <&kp>, <&kp>;
+		// };.
 
 		DEFINE_HRM(hml, home_row_mod_left, &kp, &kp, KEYS_R THUMBS);
         DEFINE_HRM(hmr, home_row_mod_right, &kp, &kp, KEYS_L THUMBS);
 	};
 
-	macros {
-        ret_arrow: ret_arrow {
-			label = "ZM_RET_ARROW";
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			bindings = <&kp MINUS>, <&kp GT>;
-		};
-
-		fat_arrow: fat_arrow {
-			label = "ZM_FAT_ARROW";
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			bindings = <&kp EQUAL>, <&kp GT>;
-		};
-	};
+	// macros {
+    //     ret_arrow: ret_arrow {
+	//         label = "ZM_RET_ARROW";
+	// 		   compatible = "zmk,behavior-macro";
+	//         #binding-cells = <0>;
+	//         bindings = <&kp MINUS>, <&kp GT>;
+	//     };
+    // 
+	// 	   fat_arrow: fat_arrow {
+	//         label = "ZM_FAT_ARROW";
+	//         compatible = "zmk,behavior-macro";
+	//         #binding-cells = <0>;
+	//         bindings = <&kp EQUAL>, <&kp GT>;
+	//     };
+	// };
 
 	combos {
 		compatible = "zmk,combos";
@@ -161,7 +161,7 @@
 			label = "Mod";
 			bindings = <
 			&kp ESC   &trans    &trans     &trans     &trans             &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
-			&sk LALT  &sk LGUI  &sk LCTRL  &sk LSHFT  &kp RALT           &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp LC(BSPC)
+			&sk LALT  &sk LGUI  &sk LCTRL  &sk LSHFT  &kp RALT           &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
 			&none     &none     &none      &kp TAB    &none              &kp CAPS   &trans    &trans    &trans     &kp DEL
                                                  &trans  &trans          &kp ENTER  &mo FNC
 			>;
