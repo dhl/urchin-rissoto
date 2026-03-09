@@ -77,45 +77,15 @@
 // -----------------
 
 &sk {
-	// don't release mods on other mods presses
 	ignore-modifiers;
 };
 
 
 / {
 	behaviors {
-		// Enables holding the first mod-tap key
-		// by performing a tap-release-hold sequence.
-		// To use it: "&qt KEYCODE1 KEYCODE2"
-		// qt: quick_tap {
-		// 	compatible = "zmk,behavior-hold-tap";
-		// 	label = "QUICK_TAP";
-		// 	#binding-cells = <2>;
-		// 	flavor = "hold-preferred";
-		// 	tapping-term-ms = <200>;
-		// 	quick-tap-ms = <200>;
-		// 	bindings = <&kp>, <&kp>;
-		// };.
-
 		DEFINE_HRM(hml, home_row_mod_left, KEYS_R);
 		DEFINE_HRM(hmr, home_row_mod_right, KEYS_L);
 	};
-
-	// macros {
-    //     ret_arrow: ret_arrow {
-	//         label = "ZM_RET_ARROW";
-	// 		   compatible = "zmk,behavior-macro";
-	//         #binding-cells = <0>;
-	//         bindings = <&kp MINUS>, <&kp GT>;
-	//     };
-    // 
-	// 	   fat_arrow: fat_arrow {
-	//         label = "ZM_FAT_ARROW";
-	//         compatible = "zmk,behavior-macro";
-	//         #binding-cells = <0>;
-	//         bindings = <&kp EQUAL>, <&kp GT>;
-	//     };
-	// };
 
 	combos {
 		compatible = "zmk,combos";
@@ -155,9 +125,9 @@
 		ext_layer {
 			label = "Mod";
 			bindings = <
-			&kp ESC   &trans    &trans     &trans     &trans             &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
-			&sk LALT  &sk LGUI  &sk LCTRL  &sk LSHFT  &kp RALT           &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
-			&none     &none     &none      &kp TAB    &none              &kp CAPS   &trans    &trans    &trans     &kp DEL
+			&kp ESC   &none     &none      &none      &none              &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
+			LHM4(A)   LHM3(S)   LHM2(D)    LHM1(F)    &none              &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &none
+			&none     &none     &none      &kp TAB    &none              &kp CAPS   &none     &none     &none      &kp DEL
                                                  &trans  &trans          &kp ENTER  &mo FNC
 			>;
 		};
