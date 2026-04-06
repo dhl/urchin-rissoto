@@ -15,6 +15,27 @@ This keymap places those programming symbols only 1 unit away from the home row,
 **Are you trying to make your own ZMK firmware?**  
 [Here are the steps you need to take.](./GETTING_STARTED.md)
 
+## Nix workflow
+
+This repository includes a Nix flake for local flashing.
+
+If you do not already have Nix installed, start with the [Determinate Systems Nix installer](https://install.determinate.systems/nix).
+
+To build and flash a connected half:
+
+```bash
+nix run .#flash
+```
+
+Before flashing, put the target half into bootloader mode and connect it over USB. Repeat the flash step for the other half.
+
+The current flake builds the Urchin split firmware with the nice!view display stack:
+
+```nix
+board = "nice_nano_v2";
+shield = "urchin_%PART% nice_view_adapter nice_view_gem";
+```
+
 ## Keymap Cheat Sheet
 
 This layout is inspired by [Urchin by duckyb](https://github.com/duckyb/zmk-urchin)
