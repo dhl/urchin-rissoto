@@ -42,6 +42,12 @@
 			key-positions = <30 31>;
 			bindings = <&mo SETTINGS>;
 		};
+
+		combo_fnc {
+			timeout-ms = <200>;
+			key-positions = <31 32>;
+			bindings = <&sl FNC>;
+		};
 	};
 
 	conditional_layers {
@@ -73,7 +79,7 @@
 			&kp GRAVE  &kp LT    &kp GT     &kp MINUS  &kp PIPE             &kp CARET  &kp LBRC   &kp RBRC   &kp DOLLAR     &kp BACKSLASH
 			&kp EXCL   &kp STAR  &kp SLASH  &kp EQUAL  &kp AMPS             &kp HASH   &kp LPAR   &kp RPAR   &kp SEMICOLON  &kp DQT
 			&kp TILDE  &kp PLUS  &kp LBKT   &kp RBKT   &kp PERCENT          &kp AT     &kp COLON  &kp QMARK  &kp UNDER      &kp SQT
-			                                        &trans  &sl FNC          &trans  &trans
+			                                        &trans  &trans          &trans  &trans
 			>;
 		};
 
@@ -81,10 +87,10 @@
 		ext_layer {
 			label = "Mod";
 			bindings = <
-			&kp ESC   &none     &none      &none      &none              &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
+			&kp ESC   &none     &none      &none      &none              &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp DEL
 			&sk LALT  &sk LGUI  &sk LCTRL  &sk LSHFT  &kp RALT           &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC
-			&none     &none     &none      &kp TAB    &none              &kp CAPS   &kp ENTER &none     &none      &kp DEL
-	                                             &trans  &trans          &sl FNC  &trans
+			&none     &none     &none      &kp TAB    &none              &kp CAPS   &kp ENTER &none     &none      &kp ENTER
+	                                             &trans  &trans          &sk LCTRL  &trans
 			>;
 		};
 
