@@ -34,6 +34,19 @@
 };
 
 / {
+	behaviors {
+		qt: quick_tap {
+			compatible = "zmk,behavior-hold-tap";
+			label = "QUICK_TAP";
+			#binding-cells = <2>;
+			flavor = "hold-preferred";
+			tapping-term-ms = <200>;
+			quick-tap-ms = <200>;
+			require-prior-idle-ms = <125>;
+			bindings = <&kp>, <&kp>;
+		};
+	};
+
 	combos {
 		compatible = "zmk,combos";
 
@@ -68,7 +81,7 @@
 			&kp Q  &kp W  &kp E  &kp R  &kp T          &kp Y  &kp U  &kp I      &kp O    &kp P 
 			&kp A  &kp S  &kp D  &kp F  &kp G          &kp H  &kp J  &kp K      &kp L    &kp BSPC
 			&kp Z  &kp X  &kp C  &kp V  &kp B          &kp N  &kp M  &kp COMMA  &kp DOT  &kp ENTER
-	                     &mo EXT  &kp SPACE          &kp LSHFT  &mo SYM
+	                 &mo EXT  &qt LSHFT SPACE          &kp LCTRL  &mo SYM
 			>;
 		};
 
@@ -111,8 +124,8 @@
 			bindings = <
 			&kp SLASH  &kp N7  &kp N8  &kp N9    &kp STAR          &none  &none  &none  &none  &none 
 			&kp MINUS  &kp N4  &kp N5  &kp N6    &kp PLUS          &sk RALT  &sk RGUI  &sk RCTRL  &sk RSHFT  &kp LALT
-			&kp PERIOD  &kp N1  &kp N2  &kp N3    &kp N0           &none  &none  &none  &none  &none
-			                           &none  &none          &none  &none
+			&kp PERIOD &kp N1  &kp N2  &kp N3    &kp N0            &none  &none  &none  &none  &none
+                                             &none  &none          &none  &none
 			>;
 		};
 
