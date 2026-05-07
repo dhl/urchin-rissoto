@@ -45,14 +45,17 @@
 
 		combo_fnc {
 			timeout-ms = <200>;
-			key-positions = <30 33>;
+			key-positions = <31 32>;
 			bindings = <&sl FNC>;
 		};
+	};
 
-		combo_num {
-			timeout-ms = <50>;
-			key-positions = <31 32>;
-			bindings = <&mo NUM>;
+	conditional_layers {
+		compatible = "zmk,conditional-layers";
+
+		ext_sym_num {
+			if-layers = <EXT SYM>;
+			then-layer = <NUM>;
 		};
 	};
 
