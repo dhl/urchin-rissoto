@@ -25,8 +25,7 @@
 #define SYM 1
 #define EXT 2
 #define FNC 3
-#define NUM 4
-#define SETTINGS 5
+#define SETTINGS 4
 // -----------------
 
 &sk {
@@ -47,15 +46,6 @@
 			timeout-ms = <200>;
 			key-positions = <31 32>;
 			bindings = <&sl FNC>;
-		};
-	};
-
-	conditional_layers {
-		compatible = "zmk,conditional-layers";
-
-		ext_sym_num {
-			if-layers = <EXT SYM>;
-			then-layer = <NUM>;
 		};
 	};
 
@@ -87,10 +77,10 @@
 		ext_layer {
 			label = "Mod";
 			bindings = <
-			&kp ESC   &none     &none      &none      &none              &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp DEL
-			&sk LALT  &sk LGUI  &sk LCTRL  &sk LSHFT  &kp RALT           &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC
-			&none     &none     &none      &kp TAB    &none              &kp CAPS   &kp ENTER &none     &none      &kp ENTER
-	                                             &trans  &trans          &key_repeat  &trans
+            &kp N1    &kp N2    &kp N3     &kp N4     &kp N5             &kp N6    &kp N7     &kp N8     &kp N9     &kp N0 
+			&sk LALT  &sk LGUI  &sk LCTRL  &sk LSHFT  &kp RALT           &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp BSPC
+			&kp DEL   &none     &none      &kp TAB    &kp CAPS           &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp ENTER
+	                                            &trans  &trans           &kp ESC  &key_repeat
 			>;
 		};
 
@@ -102,17 +92,6 @@
 			&sk LALT  &sk LGUI  &sk LCTRL  &sk LSHFT  &kp RALT          &kp F11 &kp F12 &kp PRINTSCREEN &trans &trans
 			&none     &none     &none       &none     &none             &none   &none   &none           &none  &none 
                                                   &none  &none          &none  &none
-			>;
-		};
-
-		// Numbers
-		num_layer {
-			label = "Num";
-			bindings = <
-			&kp N1  &kp N2  &kp N3     &kp N4    &kp N5          &kp N6    &kp N7     &kp N8  &kp N9   &kp N0 
-			&none   &none   &kp MINUS  &kp PLUS  &none           &kp STAR  &kp SLASH  &none   &kp DOT  &none
-			&none   &none   &none      &none     &none           &none     &none      &none   &kp DOT  &none
-                                       &none     &none           &none     &none
 			>;
 		};
 
